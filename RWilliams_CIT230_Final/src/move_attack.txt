@@ -1,0 +1,51 @@
+process of moving - click on piece
+determine if attack is possible
+poll squares in +10,-10,+/-11 or 9, and direction for != piece value - error check for edge of board, null values, out of range
+	no ->
+	determine if next space is occupied
+		yes -> 
+		nothing, illegal move
+	
+	
+		no -> 
+		movement rule (piece, current space, move space)
+		turn off occupied and values from current space
+		re-assign position to move space		
+		new space is assigned position and value from piece
+		redo display
+			if == end of board
+				-> dumbo drop
+					home column value + random number 1-8
+					determine if space is occupied
+						no ->
+						use movement where space is equal to home colume + random
+						yes ->
+						determine if occupied is != to piece value
+							yes ->
+							attack method
+							no ->
+							-> friendly fire
+							occupying piece moves to FF bin 
+							redo display
+							new piece uses movement with home row + random
+							redo display
+	yes -> 
+	receive input of square to attack
+	determine if square is attackable 
+		first by determining if square is occupied
+			no ->
+			if square is next space, use movement
+				else
+				nothing, illegal move
+			yes ->
+			use piece value to ensure square value != to piece
+				no ->
+				nothing, illegal move
+				yes ->
+				attackable
+		yes ->	
+		attack method - 
+		enemy piece uses movement rule to relocate to lost appropriate lost bin
+		redo display
+		movement rule using attacked space
+		redo display
